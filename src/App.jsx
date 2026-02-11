@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 import { ProductsSection } from "./components/ProductsSection";
+import { SearchFilter } from "./components/SearchFilter";
 
 function App() {
   const [products, setProducts] = useState([]); //shape is array of objects, fetch will return a list of products
@@ -14,7 +15,8 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="app-container">
+        <SearchFilter/>
         <ProductsSection products={products}/>
       </div>
     </>
