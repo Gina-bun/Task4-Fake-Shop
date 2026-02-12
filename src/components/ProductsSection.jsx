@@ -1,4 +1,5 @@
 import "./ProductsSection.css";
+import noResultsImage from "../assets/noResult.jpeg"
 export function ProductsSection({ products }) {
   return (
     <>
@@ -14,7 +15,10 @@ export function ProductsSection({ products }) {
               <h2>Sizes: {product.size.join(", ")}</h2>
             </div>
           );
-        })) : <h2>No products available</h2>}
+        })) : <div className="no-results h-screen flex flex-col items-center mt-[3em]">
+        <img className="no-results-image rounded-lg opacity-35" src={noResultsImage} alt="no results" />
+        <h2 className="text-[1.2em]">No result found</h2>
+        </div>}
       </div>
     </>
   );
