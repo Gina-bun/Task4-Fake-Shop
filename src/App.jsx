@@ -19,22 +19,21 @@ function App() {
   }
 
   useEffect(() => {
+    setLoading(true);
+
     const fetchProducts = async () => {
       try {
-        setLoading(true);
-
         const response = await fetch(
           "https://fakestoreapiserver.reactbd.org/api/products",
         );
         const responseObject = await response.json();
 
         setProducts(responseObject.data);
-
-        setLoading(false);
       } catch (error) {
         console.error("Fetch error:", error);
         setError("Something went wrong, please try again later( •̯́ ₃ •̯̀)")
-        setLoading(false);
+      } finally {
+        setLoading(false)
       }
     };
 
