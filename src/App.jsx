@@ -1,11 +1,22 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { filterProducts } from "./utils/filterProducts";
 
 import { ProductsSection } from "./components/ProductsSection";
 import { SearchFilter } from "./components/SearchFilter";
 
 function App() {
   const [products, setProducts] = useState([]); //shape is array of objects, fetch will return a list of products
+  const [searchQuery, setSearchQuery] = useState("")
+
+  function handleSearchChange(value){
+    setSearchQuery(value)
+    
+  }
+
+  const filteredProducts = filterProducts(products, searchQuery)
+
+  console.log(searchQuery)
 
   useEffect(() => {
     fetch("https://fakestoreapiserver.reactbd.org/api/products")
@@ -16,8 +27,8 @@ function App() {
   return (
     <>
       <div className="app-container">
-        <SearchFilter/>
-        <ProductsSection products={products}/>
+        <SearchFilter searchQuery={searchQuery} onSearchChange={handleSearchChange}/>
+        <ProductsSection products={filteredProducts} />
       </div>
     </>
   );
