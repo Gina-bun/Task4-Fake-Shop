@@ -4,7 +4,7 @@ import { Search } from "lucide-react"
 export function SearchFilter({searchQuery, onSearchChange}){
     return (
         <>
-            <div className="search-container">
+            <div className="search-container max-sm:min-w-[90%]">
                 <input 
                 className="input-search"
                 type="text"

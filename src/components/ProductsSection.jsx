@@ -8,7 +8,7 @@ export function ProductsSection({ products }) {
     <>
       <div className="flex justify-center mt-8 px-6">
         {products.length > 0 ?
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full">
              {products.map((product) => {
           return (
             <div className="product" key={product._id}>
@@ -17,6 +17,7 @@ export function ProductsSection({ products }) {
               <h2>Price: ${product.price}</h2>
               <h2>category: {product.category}</h2>
               <h2>Sizes: {product.size.join(", ")}</h2>
+              <button className="bg-green-600 p-1 w-full rounded-md mt-1">Add to Cart</button>
             </div>
           );
         })} 
