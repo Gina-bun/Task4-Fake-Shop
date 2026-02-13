@@ -23,8 +23,15 @@ export function ProductsSection({ products }) {
         })} 
         </div>
          : (<div className="no-results h-screen flex flex-col items-center mt-[3em]">
-        <img className="no-results-image rounded-lg opacity-35" src={noResultsImage} alt="no results" />
-        <h2 className="text-[1.2em]">No result found</h2>
+          <div className="w-64 aspect-square relative">
+            <img 
+            className="no-results-image rounded-lg opacity-35 object-contain w-full h-full" 
+            src={noResultsImage} 
+            alt="no results" 
+           />
+          </div>
+        
+        <h2 className="text-[1.2em]">No results found</h2>
         </div>)}
       </div>
     </>
