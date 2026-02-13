@@ -9,7 +9,7 @@ export function ProductsSection({ products }) {
              {products.map((product) => {
           return (
             <div className="product" key={product._id}>
-              <img className="rounded-md h-48 w-full object-cover" src={product.image} alt={product.title} />
+              <img className="rounded-md h-48 w-full object-cover" src={product.image} alt={product.title} loading="lazy"/>
               <h2>{product.title}</h2>
               <h2>Price: ${product.price}</h2>
               <h2>category: {product.category}</h2>
