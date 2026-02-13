@@ -1,5 +1,8 @@
+import { ProductImage } from "./ProductImage";
 import "./ProductsSection.css";
 import noResultsImage from "../assets/noResult.jpeg"
+
+
 export function ProductsSection({ products }) {
   return (
     <>
@@ -9,7 +12,7 @@ export function ProductsSection({ products }) {
              {products.map((product) => {
           return (
             <div className="product" key={product._id}>
-              <img className="rounded-md h-48 w-full object-cover" src={product.image} alt={product.title} loading="lazy"/>
+              <ProductImage src={product.image} alt={product.title}/>
               <h2>{product.title}</h2>
               <h2>Price: ${product.price}</h2>
               <h2>category: {product.category}</h2>
