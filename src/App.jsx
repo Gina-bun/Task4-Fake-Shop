@@ -28,7 +28,7 @@ function App() {
         );
         const responseObject = await response.json();
 
-        setProducts(responseObject.data);
+        setProducts(responseObject);
       } catch (error) {
         console.error("Fetch error:", error);
         setError("Something went wrong, please try again later( •̯́ ₃ •̯̀)")
