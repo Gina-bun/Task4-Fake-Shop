@@ -11,12 +11,12 @@ export function ProductsSection({ products }) {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full">
              {products.map((product) => {
           return (
-            <div className="product" key={product._id}>
+            <div className="product" key={product.id}>
               <ProductImage src={product.image} alt={product.title}/>
               <h2>{product.title}</h2>
               <h2>Price: ${product.price}</h2>
               <h2>category: {product.category}</h2>
-              <h2>Sizes: {product.size.join(", ")}</h2>
+              <h2>Rating: {product.rating.rate} ({product.rating.count} reviews)</h2>
               <button className="bg-green-600 p-1 w-full rounded-md mt-1">Add to Cart</button>
             </div>
           );
