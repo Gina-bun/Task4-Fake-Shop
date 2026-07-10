@@ -24,7 +24,7 @@ function App() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "https://fakestoreapiserver.reactbd.org/api/products",
+          "https://fakestoreapi.com/products",
         );
         const responseObject = await response.json();
 
